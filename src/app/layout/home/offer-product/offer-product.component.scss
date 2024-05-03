@@ -1,0 +1,125 @@
+.card {
+    direction: ltr;
+    padding: 10px 0 0 10px;
+    background-color: var(--color1);
+}
+
+h1 {
+    font-family: myfont-bold !important;
+    font-size: 22px;
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators {
+    padding: 0;
+    margin: 0;
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background-color: #fff;
+    border-radius: 20px;
+    display: none;
+
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    border-radius: 20px;
+    background-color: #fff;
+    display: none;
+
+}
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
+    background-color: var(--color2);
+    border-radius: 20px;
+    color: #fff;
+}
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-next {
+    background-color: var(--color2);
+    border-radius: 20px;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .card {
+        padding: 10px 0 0 0 !important;
+
+    }
+
+
+
+}
+
+
+.box {
+    position: relative;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-right: #ddd .5px solid;
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    border-radius: 10px;
+    margin: 0 2px;
+}
+
+.box img {
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.box i {
+    font-size: 22px;
+    color: var(--color1);
+}
+
+
+.box h2 {
+    font-size: 14px;
+    margin-top: 10px;
+    font-family: myfont-bold !important;
+}
+
+.box h4 {
+    font-size: 14px;
+    font-family: myfont-num !important;
+}
+
+.box h5 {
+    font-size: 10px;
+    color: #999;
+    font-family: myfont !important;
+}
+
+.offer {
+    margin-bottom: 20px;
+    max-width: 75px;
+}
+
+:host::ng-deep .p-button {
+    border-color: #fff;
+    border-radius: 5px;
+    padding: 8px 15px;
+    color: #fff;
+    transition: 1s;
+
+}
+
+:host::ng-deep .p-button:hover .p-button-icon-left {
+    transform: translateX(-1px);
+
+}
+
+:host::ng-deep .p-button .p-button-icon-left {
+    margin-right: 7px;
+    font-size: 14px;
+}
+
+:host::ng-deep .p-button .p-button-label {
+    font-family: myfont;
+    font-size: 12px;
+}

@@ -1,0 +1,37 @@
+<p-toast position="center"></p-toast>
+<section id="slider" class=" container wow fadeInUp">
+  <div class="grid align-items-center justify-content-center">
+    <div class="col-12 md:col-12 lg:col-9 slider">
+      <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [responsiveOptions]="responsiveOptions"
+        [autoplayInterval]="5000">
+        <ng-template let-item pTemplate="item">
+          <div class="text-center">
+            <a [href]="item.link">
+              <img [src]="item.url" [alt]="item.alt" class="img-fluid" />
+            </a>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+    <div class="col-12 md:col-12 lg:col-3 offer">
+      <p-carousel [value]="items" [numVisible]="1" [numScroll]="1" [circular]="false"
+        [responsiveOptions]="responsiveOptions">
+        <ng-template let-item pTemplate="item">
+          <div class="border-1 surface-border border-round m-1 text-center py-4 px-3">
+            <div class="mb-3">
+              <img [src]="item.image" [alt]="item.alt" class="img-fluid" />
+            </div>
+            <div>
+              <h4 class="mb-2">{{ item.title }}</h4>
+              <h6 class="mt-0 mb-3">$ {{item.price|number }}</h6>
+              <!-- <div class="mt-5 flex align-items-center justify-content-center gap-2">
+                        <p-button icon="pi pi-search" [rounded]="true" />
+                        <p-button icon="pi pi-star-fill" [rounded]="true" severity="secondary" />
+                    </div> -->
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<p-toast position="center"></p-toast>
+<div style="direction: rtl; text-align: right">
+  <form [formGroup]="form" (ngSubmit)="submitForm()" class="mt-4">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col">
+        <span class="p-float-label mb-4">
+          <input type="text" pInputText formControlName="title" placeholder="عنوان">
+          <label>عنوان</label>
+        </span>
+      </div>
+    </div>
+    <div class="p-fluid p-formgrid p-grid mb-4">
+      <div class="p-field p-col">
+        <span class="p-float-label">
+          <textarea rows="3" placeholder="کلمات کلیدی" pInputTextarea formControlName="keywords"></textarea>
+          <label>کلمات کلیدی</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col">
+        <span class="p-float-label">
+          <textarea rows="5" placeholder="توضیحات متا" pInputTextarea formControlName="metaData"></textarea>
+          <label>توضیحات متا</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="row text-center mt-3">
+      <p-button type="submit" label="ثبت"></p-button>
+    </div>
+  </form>
+</div>

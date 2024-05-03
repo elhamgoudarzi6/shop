@@ -1,0 +1,244 @@
+<p-toast position="center"></p-toast>
+<div style="direction: rtl; text-align: right">
+    <form [formGroup]="form" (ngSubmit)="submitForm()" class="mt-4">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <p-dropdown emptyFilterMessage="یافت نشد" emptyMessage="یافت نشد" [options]="cats"
+                        optionLabel="title" (onChange)="onCatChange($event)" [filter]="true" filterBy="title">
+                    </p-dropdown>
+                    <label>انتخاب دسته</label>
+                </span>
+            </div>
+            <div class="col-lg-3 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <p-dropdown emptyFilterMessage="یافت نشد" emptyMessage="یافت نشد" [options]="subCats"
+                        optionLabel="title" (onChange)="onSubCatChange($event)" [filter]="true" filterBy="title">
+                    </p-dropdown>
+                    <label>انتخاب زیر دسته</label>
+                </span>
+            </div>
+            <div class="col-lg-3 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <p-dropdown emptyFilterMessage="یافت نشد" emptyMessage="یافت نشد" [options]="discounts"
+                        optionLabel="title" (onChange)="onDiscountChange($event)" [filter]="true" filterBy="title">
+                    </p-dropdown>
+                    <label>تخفیف</label>
+                </span>
+            </div>
+            <div class="col-lg-3 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <input formControlName="title" pInputText />
+                    <label>عنوان</label>
+                </span>
+            </div>
+            <div class="col-lg-12 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <textarea type="text" rows="5" pInputText formControlName="detail" required></textarea>
+                    <label>توضیحات</label>
+                </span>
+            </div>
+
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <input formControlName="keywords" pInputText />
+                    <label>کلمات کلیدی</label>
+                </span>
+            </div>
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <input formControlName="imageDescription" pInputText />
+                    <label>توضیح تصویر</label>
+                </span>
+            </div>
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <span class="p-float-label mb-4">
+                    <input formControlName="metaDescription" pInputText />
+                    <label>توضیحات متا</label>
+                </span>
+            </div>
+            <div class="col-lg-12 mb-3">
+                <label class="label">تصویر اصلی</label>
+                <p-fileUpload chooseLabel="انتخاب" uploadLabel="آپلود" cancelLabel="انصراف" [customUpload]="true"
+                    (uploadHandler)="onFileUpload($event)"
+                    invalidFileSizeMessageDetail="حداکثر سایز فایل 2 مگابایت می باشد"
+                    invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد" accept="image/jpeg,image/png"
+                    [maxFileSize]="2000000">
+                </p-fileUpload>
+            </div>
+            <div class="col-lg-10 col-sm-12 mb-3">
+                <form [formGroup]="formInfo">
+                    <div class="row">
+                        <label class="label mb-3">ثبت تنوع رنگ</label>
+                        <div class="col-lg-3 col-sm-12 mb-3">
+                            <span class="p-float-label mb-4">
+                                <p-dropdown appendTo="body" emptyFilterMessage="یافت نشد" emptyMessage="یافت نشد"
+                                    [options]="colors" optionLabel="name" (onChange)="onColorChange($event)"
+                                    [filter]="true" filterBy="name">
+                                </p-dropdown>
+                                <label>نام رنگ</label>
+                            </span>
+                        </div>
+                        <div class="col-lg-3 col-sm-12 mb-3">
+                            <span class="p-float-label mb-4">
+                                <input formControlName="price" pInputText />
+                                <label>قیمت</label>
+                            </span>
+                        </div>
+                        <div class="col-lg-2 col-sm-12 mb-3">
+                            <span class="p-float-label mb-4">
+                                <input formControlName="initialNumber" pInputText />
+                                <label>تعداد</label>
+                            </span>
+                        </div>
+                        <div class="col-lg-2 mb-3">
+                            <p-fileUpload mode="basic" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php"
+                                accept="image/jpeg,image/png,image/jpg" [maxFileSize]="1000000"
+                                (onUpload)="onFileUpload($event)" [auto]="true" chooseLabel="انتخاب"></p-fileUpload>
+                        </div>
+                        <div class="col-lg-2 col-sm-12 mb-3">
+                            <p-button icon="pi pi-plus" (click)="addInfo()" [rounded]="true"
+                                [outlined]="true"></p-button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-10" *ngIf="info.length>0">
+                <p-table [value]="info">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width:20%">نام رنگ</th>
+                            <th style="width:20%">کد رنگ</th>
+                            <th style="width:20%">قیمت</th>
+                            <th style="width:15%">تعداد اولیه</th>
+                            <th style="width:15%">تعداد موجود</th>
+                            <th style="width:10%"></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
+                        <tr>
+                            <td>{{data.color}}</td>
+                            <td>{{data.colorCode}}</td>
+                            <td>{{data.price}}</td>
+                            <td>{{data.initialNumber}}</td>
+                            <td>{{data.remainsNumber}}</td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-data let-editing="editing" let-ri="rowIndex">
+                        <tr>
+                            <td [pEditableColumn]="data.color" pEditableColumnField="color"
+                                [pEditableColumnRowIndex]="ri">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input" [formGroup]="myGroup">
+                                        <input pInputText type="text" formControlName="cell" [(ngModel)]="data.color"
+                                            required>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{data.color}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+                            <td [pEditableColumn]="data.colorCode" pEditableColumnField="colorCode"
+                                [pEditableColumnRowIndex]="ri">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input" [formGroup]="myGroup">
+                                        <input pInputText type="text" formControlName="cell"
+                                            [(ngModel)]="data.colorCode" required>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{data.colorCode}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+                            <td [pEditableColumn]="data.price" pEditableColumnField="price"
+                                [pEditableColumnRowIndex]="ri">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input" [formGroup]="myGroup">
+                                        <input pInputText type="text" formControlName="cell" [(ngModel)]="data.price"
+                                            required>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{data.price}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+                            <td [pEditableColumn]="data.initialNumber" pEditableColumnField="initialNumber"
+                                [pEditableColumnRowIndex]="ri">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input" [formGroup]="myGroup">
+                                        <input pInputText type="text" formControlName="cell"
+                                            [(ngModel)]="data.initialNumber" required>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{data.initialNumber}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+                            <td [pEditableColumn]="data.remainsNumber" pEditableColumnField="remainsNumber"
+                                [pEditableColumnRowIndex]="ri">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input" [formGroup]="myGroup">
+                                        <input pInputText type="text" formControlName="cell"
+                                            [(ngModel)]="data.remainsNumber" required>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{data.remainsNumber}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+                            <td>
+                                <button (click)="delInfo(ri)" pButton type="button" icon="pi pi-times"
+                                    class="p-button-rounded p-button-text p-button-danger"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+
+            <div class="col-lg-12 col-sm-12 mb-3">
+                <label class="label">ویژگی های محصول</label>
+                <div class="col-lg-10" *ngIf="features.length>0">
+                    <p-table [value]="features">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th style="width:20%">ویژگی</th>
+                                <th style="width:80%">مقدار</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
+                            <tr>
+                                <td>{{data.feature}}</td>
+                                <td>{{data.value}}</td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-data let-editing="editing" let-ri="rowIndex">
+                            <tr>
+                                <td>
+                                    {{data.feature}}
+
+                                </td>
+                                <td [pEditableColumn]="data.value" pEditableColumnField="value"
+                                    [pEditableColumnRowIndex]="ri">
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input" [formGroup]="myFeature">
+                                            <input pInputText type="text" formControlName="cell"
+                                                [(ngModel)]="data.value" required>
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                            {{data.value}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+            <div class="row text-center mt-4">
+                <div class="col-lg-12">
+                    <button type="submit" pButton label="ثبت" [disabled]="!form.valid"></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

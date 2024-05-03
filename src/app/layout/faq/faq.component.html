@@ -1,0 +1,30 @@
+<section id="faq" class="faq mt-5 mb-5 container wow fadeInUp">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-12 Accordion">
+            <h1 class="text-center mb-4">سوالات متداول</h1>
+            <p-accordion iconPos="left" collapseIcon="pi pi-angle-down" expandIcon="pi pi-angle-left">
+                <p-accordionTab *ngFor="let item of faqs">
+                    <ng-template pTemplate="header">
+                        {{item.question}}
+                    </ng-template>
+                    {{item.reply}}
+                </p-accordionTab>
+            </p-accordion>
+        </div>
+        <div class="col-lg-12 mt-5">
+            <h1 class="text-center mt-5 mb-5">نحوه ثبت سفارش</h1>
+            <p-timeline [value]="events" [align]="'alternate'" styleClass="customized-timeline">
+                <ng-template pTemplate="marker" let-event>
+                    <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
+                        <i [ngClass]="event.icon"></i>
+                    </span>
+                </ng-template>
+                <ng-template pTemplate="content" let-event>
+                    <p-card [header]="event.status">
+                        {{event.data}}
+                    </p-card>
+                </ng-template>
+            </p-timeline>
+        </div>
+    </div>
+</section>

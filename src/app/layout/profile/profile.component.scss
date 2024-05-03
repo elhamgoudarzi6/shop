@@ -1,0 +1,149 @@
+:host::ng-deep .p-toolbar {
+  padding:5px 10px;
+  background-color: #fff;
+  display: none;
+}
+:host::ng-deep .p-toolbar i{
+  font-size: 24px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+:host::ng-deep .p-button {
+  color: #fff;
+  font-family: myfont;
+}
+
+:host::ng-deep .p-button:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+  border: none;
+}
+
+:host::ng-deep .p-button:focus-within {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+:host::ng-deep input {
+  font-family: myfont;
+  font-size: 12px;
+}
+
+:host::ng-deep .mat-drawer-container {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eff3f8;
+}
+
+:host::ng-deep .p-button .p-tooltip-text {
+  font-family: myfont !important;
+}
+
+span {
+  font-family: myfont-bold;
+}
+
+:host::ng-deep .mat-drawer {
+  width: 250px;
+  margin-top: .5px;
+}
+
+h6 {
+  font-family: myfont !important;
+  font-size: 16px;
+}
+
+
+:host::ng-deep .p-menuitem-icon {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #111;
+}
+
+.menu {
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top:20px;
+}
+
+:host::ng-deep .p-menu {
+  padding: 0 5px;
+  border: none;
+  width: 100%;
+  margin-top: 30px;
+}
+
+:host::ng-deep .p-menu ul {
+  padding-left: 0;
+}
+
+:host::ng-deep .p-menu .p-menuitem>.p-menuitem-content .p-menuitem-link {
+  border-top: #eee .5px solid;
+}
+
+:host::ng-deep .p-menu .p-menuitem>.p-menuitem-content .p-menuitem-link .p-menuitem-text {
+  font-family: myfont !important;
+  font-size: 14px;
+  color: #111;
+
+}
+
+:host::ng-deep .mat-drawer-container {
+  background-color: #fff;
+  margin-top: 40px;
+  padding-right: 30px;
+  padding: 0 8%;
+}
+
+:host::ng-deep .mat-drawer {
+  border: none !important;
+}
+
+@media (max-width: 991px) {
+  :host::ng-deep .p-toolbar{
+   display: block;
+  }
+  .menu {
+    margin-right: 10px;
+  }
+
+  .menu h6 {
+    display: none;
+  }
+
+  :host::ng-deep .p-avatar {
+    display: none;
+
+  }
+
+  :host::ng-deep .mat-drawer-container {
+    padding: 0 !important;
+  }
+
+  :host::ng-deep .mat-drawer-container {
+    padding: 0 !important;
+  }
+
+  :host::ng-deep .mat-drawer {
+    width: 70px;
+  }
+
+  :host::ng-deep .p-menuitem-icon {
+    font-size: 24px;
+  }
+
+  :host::ng-deep .p-menu .p-menuitem>.p-menuitem-content .p-menuitem-link {
+    border: none;
+    padding: 12px 0;
+  }
+
+  :host::ng-deep .p-menu .p-menuitem>.p-menuitem-content .p-menuitem-link .p-menuitem-text {
+    display: none;
+  }
+}
+

@@ -1,0 +1,140 @@
+<p-toast position="center"></p-toast>
+
+<meta name="keywords" *ngIf="keywords != undefined" [content]="keywords" />
+<meta name="description" *ngIf="metaData != undefined" [content]="metaData" />
+<p-breadcrumb [model]="[{icon:'pi pi-chevron-left',label: 'محصولات'}]"
+  [home]="{ icon: 'pi pi-home', routerLink: '/' }"></p-breadcrumb>
+
+<div class="container-fluid">
+  <div class="grid justify-content-center mb-4">
+    <div class="col-3 accordion">
+      <p-accordion expandIcon="pi pi-angle-left" iconPos="right" [multiple]="true">
+        <p-accordionTab toggleable="false" header="محدوده قیمت" [selected]="true">
+          <div class="flex flex-column mb-5 justify-content-center">
+            <div class="flex flex-row align-items-center">
+              <label>از</label>
+              <p-inputNumber inputId="integeronly" [(ngModel)]="minPrice" (keyup)="filterIt()"></p-inputNumber>
+              <label class="unit">تومان</label>
+            </div>
+            <div class="flex flex-row align-items-center">
+              <label>تا</label>
+              <p-inputNumber inputId="integeronly" [(ngModel)]="maxPrice" (keyup)="filterIt()"></p-inputNumber>
+              <label class="unit">تومان</label>
+            </div>
+          </div>
+        </p-accordionTab>
+        <p-accordionTab toggleable="false" header="رنگ بندی" [selected]="true">
+          <div class="flex flex-row flex-wrap align-items-center">
+            <div class="flex mb-2" *ngFor="let item of colors">
+              <div class="flex flex-column justify-content-center">
+                <a class="color" [style.background]="item.code"></a>
+                <h6>{{item.name}}</h6>
+              </div>
+            </div>
+          </div>
+        </p-accordionTab>
+        <p-accordionTab toggleable="false" header="وضعیت" [selected]="true">
+          <div class="grid flex-row justify-content-between px-3 align-items-center">
+            <h1>تخفیف دار</h1>
+            <p-inputSwitch [(ngModel)]="offer" name="offer" (onChange)="hasOffer()"></p-inputSwitch>
+          </div>
+          <p-divider></p-divider>
+          <div class="grid flex-row justify-content-between align-items-center px-3">
+            <h1>موجود</h1>
+            <p-inputSwitch [(ngModel)]="offer" name="offer" (onChange)="hasOffer()"></p-inputSwitch>
+          </div>
+        </p-accordionTab>
+        <p-accordionTab toggleable="false" header="ویژگی ها">
+          <div *ngFor="let item of features" (click)="goProduct(item._id)">
+            <h1 (click)="goProduct(item._id)">{{item.feature}}</h1>
+            <p-divider></p-divider>
+          </div>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+    <div class="sort-mobile">
+      <p-tabMenu [model]="tabs" [activeItem]="activeItem" (activeItemChange)="activateMenu($event)"></p-tabMenu>
+    </div>
+    <div class="col-12 md:col-12 lg:col-9 ">
+
+      <p-toolbar class="sort">
+        <p-tabMenu [model]="tabs" [activeItem]="activeItem" (activeItemChange)="activateMenu($event)"></p-tabMenu>
+      </p-toolbar>
+      <div class="flex flex-row flex-wrap">
+        <div class="col-12 md:col-4 lg:col-3 mb-1" *ngFor="let item of getProducts()">
+          <div class="box card-block" routerLink="/product" [state]="item">
+            <img [src]="item.image" [alt]="item.title" />
+            <div class="box-body">
+              <h2>{{item.title}}</h2>
+              <h4> {{item.price/10 |number}}تومان</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p-toolbar>
+        <div class="p-toolbar-group-start">
+        </div>
+        <div class="p-toolbar-group-center">
+          <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+            [totalRecords]="120"></p-paginator>
+        </div>
+        <div class="p-toolbar-group-end">
+        </div>
+      </p-toolbar>
+    </div>
+  </div>
+</div>
+
+<p-sidebar Scroll [(visible)]="displayFilter" [modal]="true" position="left" [style]="{'width': '300px'}">
+  <div class="row mt-3">
+    <div class="col-12 text-center justify-content-center">
+      <p-accordion expandIcon="pi pi-angle-left" iconPos="right" [multiple]="true">
+        <p-accordionTab toggleable="false" header="محدوده قیمت" [selected]="true">
+          <div class="flex flex-column mb-5 justify-content-center">
+            <div class="flex flex-row align-items-center">
+              <label>از</label>
+              <p-inputNumber inputId="integeronly" [(ngModel)]="minPrice"></p-inputNumber>
+              <label class="unit">تومان</label>
+            </div>
+            <div class="flex flex-row align-items-center">
+              <label>تا</label>
+              <p-inputNumber inputId="integeronly" [(ngModel)]="maxPrice"></p-inputNumber>
+              <label class="unit">تومان</label>
+            </div>
+            <!-- <div class="ui-fluid">
+            <p-slider #progressSlider [(ngModel)]="rangeValues" [range]="true" (onChange)="handleChange($event)"
+              ariaLabel="Number" ariaLabelledBy="label_min"></p-slider>
+          </div> -->
+          </div>
+        </p-accordionTab>
+        <p-accordionTab toggleable="false" header="رنگ بندی" [selected]="true">
+          <div class="flex flex-row flex-wrap align-items-center">
+            <div class="flex mb-2" *ngFor="let item of colors">
+              <div class="flex flex-column justify-content-center">
+                <a class="color" [style.background]="item.code"></a>
+                <h6>{{item.name}}</h6>
+              </div>
+            </div>
+          </div>
+        </p-accordionTab>
+        <p-accordionTab toggleable="false" header="وضعیت" [selected]="true">
+          <div class="grid flex-row justify-content-between px-3 align-items-center">
+            <h1>تخفیف دار</h1>
+            <p-inputSwitch [(ngModel)]="offer" name="offer" (onChange)="hasOffer()"></p-inputSwitch>
+          </div>
+          <p-divider></p-divider>
+          <div class="grid flex-row justify-content-between align-items-center px-3">
+            <h1>موجود</h1>
+            <p-inputSwitch [(ngModel)]="offer" name="offer" (onChange)="hasOffer()"></p-inputSwitch>
+          </div>
+        </p-accordionTab>
+        <p-accordionTab toggleable="false" header="ویژگی ها">
+          <div *ngFor="let item of features" (click)="goProduct(item._id)">
+            <h1 (click)="goProduct(item._id)">{{item.feature}}</h1>
+            <p-divider></p-divider>
+          </div>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+  </div>
+</p-sidebar>

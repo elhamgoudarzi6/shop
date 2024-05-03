@@ -1,0 +1,72 @@
+@import url('https://fonts.cdnfonts.com/css/iranyekan');
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@font-face {
+    font-family: 'myfont';
+    src: url('./assets/fonts/Iranyekan.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'myfont-bold';
+    src: url('./assets/fonts/IranyekanBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'myfont-light';
+    src: url('./assets/fonts/IranyekanLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'myfont-num';
+    src: url('./assets/fonts/IRANSansWeb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+  //  --color1: #ce243e;
+    --color1: #ce243e;   
+    --color2: #a58c62;
+    --color-bg: #fff;
+    --color-title: #cc8800;
+    --color-font: #111;
+}
+
+body {
+    font-size: 14px;
+    direction: rtl;
+    color: var(--color-font);
+    background-color: var(--color-bg);
+    font-family: myfont !important;
+}
+
+a,
+a:hover {
+    outline-color: #ced4da;
+    text-decoration: none;
+    color: inherit;
+}
+
+// :host::ng-deep .p-input,
+// :host::ng-deep .p-inputtext,
+// input,
+// span:focus {
+//     outline: 0 !important;
+//     box-shadow: none !important;
+// }
+
+// :host::ng-deep .p-button,
+// :host::ng-deep .p-input,
+// :host::ng-deep .p-inputtext,
+// input,
+// span:focus-within {
+//     outline: 0 !important;
+//     box-shadow: none !important;
+// }

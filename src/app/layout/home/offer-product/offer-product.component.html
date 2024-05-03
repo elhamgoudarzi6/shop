@@ -1,0 +1,26 @@
+<p-toast position="center"></p-toast>
+
+<div class="container mt-5 wow fadeInUp">
+    <div class="card">
+        <div class="grid flex-row-reverse align-items-center justify-content-center">
+            <div class="col-3 md:col-2 lg:col-2 text-center">
+                <div class="flex flex-column align-items-center">
+                    <img src="../../../../assets/images/offer.png" class="img-fluid offer" />
+                    <p-button routerLink="/products" label="همه" [outlined]="true" icon="pi pi-arrow-left"></p-button>
+                </div>
+            </div>
+            <div class="col-8 md:col-10 lg:col-10">
+                <p-carousel [value]="products" [numVisible]="5" [numScroll]="1" [responsiveOptions]="responsiveOptions"
+                    [autoplayInterval]="5000">
+                    <ng-template let-item pTemplate="item">
+                        <div class="box" routerLink="/product" [state]="item">
+                            <img [src]="item.image" [alt]="item.title" />
+                            <h2>{{item.title}}</h2>
+                            <h4>{{item.price | number}} تومان</h4>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </div>
+        </div>
+    </div>
+</div>

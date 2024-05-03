@@ -1,0 +1,27 @@
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+    <i class="pi pi-bars" (click)="drawer.toggle()"></i>
+
+  </div>
+  <div class="p-toolbar-group-center">
+
+  </div>
+  <div class="p-toolbar-group-end">
+
+  </div>
+</p-toolbar>
+<mat-drawer-container dir="rtl">
+  <mat-drawer #drawer [opened]="true" [mode]="'side'">
+    <div class="menu">
+      <p-avatar *ngIf="image==undefined" icon="pi pi-user" size="xlarge" styleClass="mt-4"
+        [style]="{'background-color': '#eff3f8','color':'#e2e2e2'}" shape="circle"></p-avatar>
+      <p-avatar *ngIf="image!=undefined" [image]="image" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+      <h6 class="mt-2">{{fullName}}</h6>
+      <p-menu [model]="items"></p-menu>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content></ng-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

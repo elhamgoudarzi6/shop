@@ -1,0 +1,9 @@
+<section class="container mt-3">
+    <div class="grid">
+        <div class="col-12 md:col-12 lg:col-6" *ngFor="let item of images">
+            <a [href]="item.link">
+                <img [src]="item.url" [alt]="item.alt" class="img-fluid">
+            </a>
+        </div>
+    </div>
+</section>

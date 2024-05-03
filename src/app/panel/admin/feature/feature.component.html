@@ -1,0 +1,127 @@
+<p-toast position="center"></p-toast>
+<p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>
+
+<p-breadcrumb [model]="[{icon:'pi pi-chevron-left',label: 'مدیریت ویژگی / رنگ'}]"
+    [home]="{ icon: 'pi pi-home', routerLink: '/admin' }"></p-breadcrumb>
+
+<div class="grid py-3 px-4">
+
+    <div class="col-12 md:col-12 lg:col-6 mb-3 card">
+        <p-table #dt [value]="features" responsiveLayout="stack" dataKey="_id" [rows]="10" [showCurrentPageReport]="true"
+            [paginator]="true" currentPageReportTemplate="{first} تا {last} از {totalRecords}" [filterDelay]="0"
+            [globalFilterFields]="['feature']">
+            <ng-template pTemplate="caption">
+                <div class="grid">
+                    <div class="col text-right">
+                        <button pButton pRipple label="جدید" icon="pi pi-plus"
+                            class="p-button p-mr-2 p-button-icon-right" (click)="showAddFeature()"></button>
+                    </div>
+                    <div class="col-fixed">
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text"
+                                (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+                                placeholder="جستجو کلی" />
+                        </span>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>ویژگی</th>
+                    <th>عملیات</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-data let-editing="editing" let-ri="rowIndex">
+                <tr>
+                    <td [pEditableColumn]="data.feature" pEditableColumnField="feature" [pEditableColumnRowIndex]="ri">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input" [formGroup]="form">
+                                <input pInputText type="text" formControlName="feature" [(ngModel)]="data.feature"
+                                    required>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{data.feature}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <button pButton pRipple icon="pi pi-pencil" (click)="editFeature(data._id)"></button>
+                        <button pButton pRipple icon="pi pi-trash" (click)="deleteFeature(data._id)"></button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="3">هیچ رکوردی یافت نشد.</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+
+
+    <div class="col-12 md:col-12 lg:col-6 mb-3 card">
+        <p-table #dt [value]="colors" responsiveLayout="stack" dataKey="_id" [rows]="10" [showCurrentPageReport]="true"
+            [paginator]="true" currentPageReportTemplate="{first} تا {last} از {totalRecords}" [filterDelay]="0"
+            [globalFilterFields]="['code', 'name']">
+            <ng-template pTemplate="caption">
+                <div class="grid">
+                    <div class="col text-right">
+                        <button pButton pRipple label="جدید" icon="pi pi-plus"
+                            class="p-button p-mr-2 p-button-icon-right" (click)="showAddColor()"></button>
+                    </div>
+                    <div class="col-fixed">
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text"
+                                (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+                                placeholder="جستجو کلی" />
+                        </span>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>نام رنگ</th>
+                    <th>کد رنگ</th>
+                    <th>عملیات</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-data let-editing="editing" let-ri="rowIndex">
+                <tr>
+                    <td [pEditableColumn]="data.name" pEditableColumnField="name" [pEditableColumnRowIndex]="ri">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input" [formGroup]="form2">
+                                <input pInputText type="text" formControlName="name" [(ngModel)]="data.name" required>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{data.name}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td [pEditableColumn]="data.code" pEditableColumnField="code" [pEditableColumnRowIndex]="ri">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input" [formGroup]="form2">
+                                <input pInputText type="text" formControlName="code" [(ngModel)]="data.code" required>
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{data.code}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <button pButton pRipple icon="pi pi-pencil" (click)="editColor(data._id)"></button>
+                        <button pButton pRipple icon="pi pi-trash" (click)="deleteColor(data._id)"></button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="3">هیچ رکوردی یافت نشد.</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

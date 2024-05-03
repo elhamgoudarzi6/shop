@@ -1,0 +1,49 @@
+.slider {
+  direction: ltr;
+  margin-top: 20px;
+}
+
+.slider h1 {
+  font-family: myfont-bold !important;
+  font-size: 22px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.offer {
+  direction: ltr;
+  margin-top: 20px;
+}
+.offer h4 {
+  font-family: myfont;
+  font-size: 18px;
+}
+.offer h6 {
+  font-family: myfont-num;
+}
+:host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: var(--color1);
+  border-radius: 20px;
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  border-radius: 20px;
+  margin-top: -45px;
+}
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
+  display: none;
+}
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-next {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  img {
+    height: 220px;
+  }
+}

@@ -1,0 +1,79 @@
+.card {
+    direction: ltr;
+    padding-top: 15px;
+  }
+  
+  h1 {
+    font-family: myfont-bold !important;
+    font-size: 22px;
+  }
+  
+  :host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background-color: var(--color1);
+    border-radius: 20px;
+  }
+  
+  :host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    border-radius: 20px;
+  }
+  
+  ::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
+    background-color: var(--color2);
+    border-radius: 20px;
+    color: #fff;
+  }
+  
+  ::ng-deep .p-carousel .p-carousel-content .p-carousel-next {
+    background-color: var(--color2);
+    border-radius: 20px;
+    color: #fff;
+  }
+  
+  @media (max-width: 991px) {
+    .gallery {
+      padding: 5px;
+    }
+  }
+  
+  
+  .box {
+    position: relative;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-right: #ddd .5px solid;
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+  }
+  
+  .box img {
+    border-radius: 5px;
+    max-width: 100%;
+  }
+  
+  .box i {
+    font-size: 22px;
+    color: var(--color1);
+  }
+  
+  
+  .box h2 {
+    font-size: 14px;
+    margin-top: 10px;
+    font-family: myfont-bold !important;
+  }
+  
+  .box h4 {
+    font-size: 14px;
+    font-family: myfont-num !important;
+  }
+  
+  .box h5 {
+    font-size: 10px;
+    color: #999;
+    font-family: myfont !important;
+  }

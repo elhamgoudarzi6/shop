@@ -1,0 +1,325 @@
+.header-pc {
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+:host::ng-deep .p-overlay-badge {
+  margin-right: 25px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+:host::ng-deep .p-overlay-badge .p-badge {
+  background-color: var(--color1);
+  font-family: myfont-num;
+}
+
+.toggle {
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.header-mobile {
+  display: none;
+  background-color: #f1f1f1;
+  z-index: 100;
+  position: sticky;
+  padding: 10px 5px;
+  border-bottom: #eee .5px solid;
+  top: 0;
+}
+
+
+.header-pc img {
+  max-width: 100px;
+}
+
+.header-mobile img {
+  max-width: 70px;
+  align-self: center;
+}
+
+:host::ng-deep .p-panelmenu {
+  text-align: right;
+}
+
+:host::ng-deep .p-panelmenu .p-menuitem-text {
+  font-family: myfont !important;
+  font-size: 12px;
+}
+
+:host::ng-deep .p-panelmenu-header-content {
+  border-radius: 5px;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-panelmenu-root-list {
+  padding: 0;
+  margin: 5px;
+}
+
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-submenu-list:not(.p-panelmenu-root-list) {
+  padding: 0;
+  margin: 5px;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem>.p-menuitem-content .p-menuitem-link .p-submenu-icon {
+  position: absolute;
+  left: 0 !important;
+  margin-right: unset !important;
+  margin-left: 0.5rem;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem>.p-menuitem-content .p-menuitem-link .p-submenu-icon::before {
+  content: "\e931" !important;
+}
+
+:host::ng-deep .p-menuitem-icon {
+  margin-left: 5px !important;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content .p-panelmenu-header-action .p-submenu-icon {
+  position: absolute;
+  left: 0 !important;
+  margin-right: unset !important;
+  margin-left: 15px;
+  margin-top: -7px;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-content .p-menuitem-link .p-submenu-icon {
+  margin-top: -8px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-content .p-menuitem-link .p-submenu-icon::before {
+  content: 'okkk';
+}
+
+:host::ng-deep .p-submenu-icon .p-panelmenu-icon .p-icon {
+  display: none;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content .p-panelmenu-header-action {
+  border-radius: 20px;
+  padding: 15px 5px;
+}
+
+:host::ng-deep .p-icon::after {
+  content: "\e931" !important;
+}
+
+:host::ng-deep .p-submenu-icon .p-panelmenu-icon::after {
+  content: "\e931" !important;
+}
+
+:host::ng-deep .p-sidebar {
+  background-color: #fff;
+}
+
+:host::ng-deep .p-inputtext {
+  width: 100% !important;
+  border: 1px solid #d1d5db;
+  font-family: myfont;
+  font-size: 14px;
+}
+
+:host::ng-deep .p-toolbar {
+  //  margin-top: 15px;
+  //background-color: #fff;
+}
+
+.cart {
+  font-size: 14px;
+  font-family: myfont-num;
+}
+
+:host::ng-deep .p-megamenu {
+  background-color: transparent;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none;
+}
+
+:host::ng-deep .p-megamenu.p-megamenu-horizontal .p-megamenu-root-list>.p-menuitem>.p-menuitem-content .p-menuitem-link .p-menuitem-text {
+  font-size: 12px;
+  font-family: myfont-bold;
+}
+
+:host::ng-deep .p-megamenu.p-megamenu-horizontal .p-megamenu-root-list>.p-menuitem>.p-menuitem-content .p-menuitem-link {
+  padding: 10px 5px;
+}
+
+:host::ng-deep .p-megamenu-horizontal .p-megamenu-root-list {
+  margin: 0;
+}
+
+:host::ng-deep .p-megamenu.p-megamenu-horizontal .p-menuitem-icon {
+  color: #222 !important;
+  font-size: 16px;
+}
+
+:host::ng-deep .p-megamenu .p-megamenu-panel {
+  border-radius: 5px;
+}
+
+:host::ng-deep .p-megamenu .p-menuitem>.p-menuitem-content .p-menuitem-link .p-menuitem-text {
+  font-family: myfont;
+  font-size: 14px;
+}
+
+:host::ng-deep .p-megamenu .p-submenu-header {
+  font-family: myfont;
+  font-size: 14px;
+}
+
+
+:host::ng-deep .p-button {
+  border-color: #ddd;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 8px 20px;
+  color: #222;
+}
+
+:host::ng-deep .p-button .p-button-icon-left {
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+:host::ng-deep .p-button .p-button-label {
+  font-family: myfont !important;
+  font-size: 12px;
+}
+
+:host::ng-deep .p-button.basket {
+  border-color: var(--color1) !important;
+  background-color: var(--color1) !important;
+  border-radius: 10px;
+  padding: 8px 20px;
+  color: #fff;
+}
+
+:host::ng-deep .p-tabmenu {
+  padding: 0;
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav {
+  border-color: transparent;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+:host::ng-deep .p-menuitem-link {
+  font-size: 12px;
+  color: #777;
+  font-family: 'IRANSans_Bold' !important;
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+  border-color: #ddd;
+  color: var(--color1);
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link .p-menuitem-icon {
+  // margin-left: 5px;
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+  border-color: var(--color1);
+  color: var(--color1);
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  border-color: transparent;
+  // padding:15px;
+
+}
+
+.tabs {
+  display: none;
+}
+
+.flex-column {
+  color: #555;
+}
+
+.flex-column i {
+  font-size: 20px;
+}
+
+.flex-column span {
+  font-family: myfont;
+  font-size: 9px;
+  margin-top: 5px;
+}
+
+.footer-mobile {
+  display: none;
+  background-color: #fff;
+  border-top: #ddd 1px solid;
+  z-index: 100;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+:host::ng-deep .p-autocomplete {
+  width: 300px;
+}
+
+.sumprice {
+  font-family: myfont-num;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  :host::ng-deep .p-autocomplete {
+    width: 200px;
+  }
+}
+
+@media (max-width: 991px) {
+  .header-mobile {
+    display: block;
+  }
+
+  .footer-mobile {
+    display: block;
+  }
+
+  .header-pc {
+    display: none;
+  }
+
+  :host::ng-deep .p-autocomplete {
+    width: 90% !important;
+  }
+
+  :host::ng-deep .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+    font-family: myfont;
+    font-size: 14px;
+  }
+  :host::ng-deep .p-overlay-badge.foot {
+    color: #777;
+  }
+  :host::ng-deep .p-overlay-badge .p-badge {
+    background-color: var(--color1);
+    color: #fff;
+  }
+  :host::ng-deep .p-overlay-badge {
+    color: #fff;
+  }
+
+ 
+
+
+ 
+
+}

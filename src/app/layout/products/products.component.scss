@@ -1,0 +1,275 @@
+:host::ng-deep .p-breadcrumb {
+    font-family: myfont !important;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    background-color: transparent;
+    padding: 15px;
+    margin: 0;
+}
+
+:host::ng-deep .p-breadcrumb .p-icon {
+    display: none;
+}
+
+:host::ng-deep .p-breadcrumb .p-breadcrumb-list li:last-child .p-menuitem-icon {
+    margin-right: -15px;
+}
+
+:host::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+    font-size: 14px;
+    font-family: myfont;
+    border-radius: 10px;
+}
+
+:host::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
+    margin-top: -8px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+}
+
+h1 {
+    font-size: 14px;
+    color: #777;
+    font-family: myfont !important;
+    cursor: pointer;
+}
+
+.box {
+    position: relative;
+    border-radius: 10px;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 6px 5px 20px 0px rgba(#ddd, .3);
+    cursor: pointer;
+    transition: 0.3s;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: #ddd .5px solid;
+}
+
+.box:hover {
+    transform: scale(1.01);
+}
+
+.box img {
+    border-radius: 5px;
+}
+
+.box .box-body {
+    padding: 10px;
+}
+
+.box h2 {
+    font-size: 14px;
+    color: #222;
+    font-family: myfont;
+}
+
+.box h4 {
+    font-size: 14px;
+    color: #222;
+    font-family: myfont-num;
+    line-height: 20px;
+}
+
+:host::ng-deep .p-button {
+    font-size: 14px;
+    font-family: myfont;
+    padding: 8px 20px;
+    background: var(--color1);
+    border: none;
+    color: #fff;
+}
+
+:host::ng-deep .p-button:hover {
+    background: var(--color1);
+    border: none;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    border: #ddd 1px solid;
+    border-radius: 10px;
+    box-shadow: 6px 5px 20px 0px rgba(#ddd, .3);
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+:host::ng-deep .p-slider {
+    width: 100%;
+}
+
+:host ::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background: var(--color1);
+}
+
+:host ::ng-deep .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {
+    background: #c1c8c9;
+}
+
+:host::ng-deep .p-toolbar {
+    margin-bottom: 10px;
+    padding: 0;
+    background-color: #fff;
+}
+
+:host::ng-deep .p-tabmenu-nav .p-menuitem-text {
+    font-size: 12px;
+}
+
+
+
+.sort-mobile {
+    display: none !important;
+    border-radius: 10px;
+    border: #ddd 1px solid;
+    z-index: 100;
+    width: 100%;
+    position: fixed;
+    top: 80px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+    .accordion {
+        display: none;
+    }
+
+    :host::ng-deep .p-tabmenu-nav .p-menuitem-text {
+        font-size: 10px;
+    }
+
+    :host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    :host::ng-deep .p-tabmenu-nav {
+         border-radius: 10px;
+    }
+
+    :host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link .p-menuitem-icon {
+        margin-left: 2px !important;
+    }
+
+    :host::ng-deep .p-breadcrumb {
+        display: none;
+    }
+
+    .sort {
+        display: none !important;
+    }
+
+    .sort-mobile {
+        display: block !important;
+    }
+
+    :host::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+        font-size: 12px;
+    }
+
+    :host::ng-deep .p-paginator .p-paginator-first,
+    .p-paginator .p-paginator-prev,
+    .p-paginator .p-paginator-next,
+    .p-paginator .p-paginator-last {
+        padding: 0;
+        margin: 5px;
+        min-width: 10px;
+    }
+
+}
+
+
+
+label {
+    font-family: myfont !important;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+label.unit {
+    font-family: myfont !important;
+    font-weight: bold;
+    font-size: 10px;
+    margin-top: 35px;
+}
+
+span {
+    font-family: myfont !important;
+    font-size: 12px;
+}
+
+:host::ng-deep .p-inputnumber-input {
+    font-family: myfont-num !important;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 10px 20px;
+    border-radius: 0;
+    width: 100% !important;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #d1d5db;
+}
+
+:host::ng-deep .p-inputnumber-input:focus {
+    // outline: 0 none;
+    // outline-offset: 0;
+    box-shadow: none !important;
+}
+
+:host::ng-deep .p-tabmenu {
+    padding: 0;
+    margin: 0;
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav {
+    border-color: transparent;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+:host::ng-deep .p-menuitem-link {
+    font-size: 12px;
+    color: #777;
+    font-family: myfont !important;
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+    border-color: #ddd;
+    color: var(--color1);
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link .p-menuitem-icon {
+    margin-left: 5px;
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+    border-color: var(--color1);
+    color: var(--color1);
+
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+    border-color: transparent;
+    background-color: none !important;
+}
+
+:host::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+    font-family: myfont-num;
+}
+
+h6 {
+    font-family: myfont;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+}

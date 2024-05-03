@@ -1,0 +1,56 @@
+<p-toast position="center"></p-toast>
+<p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>
+
+<p-breadcrumb [model]="[{icon:'pi pi-chevron-left',label: 'لیست تراکنش'}]"
+    [home]="{ icon: 'pi pi-home', routerLink: '/admin' }"></p-breadcrumb>
+
+<div class="px-3 py-2 md:px-6 lg:px-3">
+    <div class="card">
+        <p-table #dt1 [value]="payments" [rows]="10" [showCurrentPageReport]="true" [paginator]="true"
+            responsiveLayout="stack" currentPageReportTemplate="{first} تا {last} از {totalRecords}" [filterDelay]="0"
+            [globalFilterFields]="['code','visitTime']">
+            <ng-template pTemplate="caption">
+                <div class="row">
+                    <div class="col-lg-12 mt-4">
+                        <span class="p-input-icon-left w-100">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text"
+                                (input)="dt1.filterGlobal($any($event.target).value, 'contains')"
+                                placeholder="جستجو کلی" />
+                        </span>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>کد رزرو</th>
+                    <th>نام</th>
+                    <th>موبایل</th>
+                    <th>شناسه درخواست</th>
+                    <th>مبلغ(تومان)</th>
+                    <th>شماره تراکنش</th>
+                    <th>ساعت</th>
+                    <th>تاریخ</th>
+                    <th>وضعیت</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-data>
+                <tr>
+                    <td>{{data.Reserve[0].code}}</td>
+                    <td>{{data.User[0].fullName}}</td>
+                    <td>{{data.User[0].mobile}}</td>
+                    <td>{{data.resNumber}}</td>
+                    <td>{{data.price/10 | number}}</td>
+                    <td>{{data.refID}}</td>
+                    <td>{{data.time}}</td>
+                    <td>{{data.date}}</td>
+                    <td>
+                        <div [ngClass]="data.status=='موفق'? 'green': 'red'">{{data.status}}</div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+
+    </div>
+</div>

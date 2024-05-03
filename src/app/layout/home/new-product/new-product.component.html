@@ -1,0 +1,21 @@
+<p-toast position="center"></p-toast>
+
+<div class="container mt-5 wow fadeInUp">
+    <h1 class="text-center mb-4">جدیدترین محصولات</h1>
+    <div class="card">
+        <p-carousel [value]="products"  [numVisible]="5" [numScroll]="1" [responsiveOptions]="responsiveOptions"
+            [autoplayInterval]="5000">
+            <ng-template let-item pTemplate="item" ondrag="" >
+                <div class="box" routerLink="/product" [state]="item">
+                    <img [src]="item.image" [alt]="item.title" />
+                    <!-- <div class="flex justify-content-start flex-wrap">
+                        <h5>گوشی موبایل</h5>
+                        <h5>/اپل</h5>
+                    </div> -->
+                    <h2>{{item.title}}</h2>
+                    <h4>{{item.price | number}} تومان</h4>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>

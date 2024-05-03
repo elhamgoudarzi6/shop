@@ -1,0 +1,64 @@
+.card-container {
+  border-radius: 10px;
+}
+
+img {
+  max-width: 100px;
+}
+
+input {
+  font-size: 14px;
+  height: 45px;
+  border-radius: 5px;
+  font-family: myfont-num !important;
+  border: 1px solid #d1d5db;
+}
+
+.btn-login {
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 20%;
+  border-radius: 10px;
+  background: var(--color1);
+  font-family: myfont-bold !important;
+}
+
+.btn-login:hover {
+  background: var(--color1);
+}
+
+.verify {
+  padding: 0 30px;
+  font-family: myfont-bold !important;
+  font-size: 14px;
+}
+
+input,
+:host::ng-deep .p-inputtext .p-inputtext {
+  width: 100% !important;
+}
+
+.p-float-label {
+  margin-bottom: 20px;
+}
+
+label {
+  right: 20px;
+  left: unset;
+  font-family: myfont !important;
+}
+
+.input-container {
+  padding: 9% 10%;
+}
+
+:host::ng-deep .p-message .p-message-detail {
+  font-size: 14px;
+  font-family: myfont !important;
+}
+
+:host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
+  font-size: 14px;
+  font-family: myfont !important;
+  margin-right: 10px;
+}

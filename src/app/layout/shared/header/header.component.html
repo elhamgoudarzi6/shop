@@ -1,0 +1,88 @@
+<div class="header-pc">
+  <p-toolbar>
+    <div class="p-toolbar-group-start">
+      <img src="../../../../assets/images/logo.png" class="ml-3" alt="فروشگاه گوشی 24" />
+      <p-megaMenu [model]="items1"></p-megaMenu>
+    </div>
+    <!-- <div class="p-toolbar-group-center">
+
+    </div> -->
+    <div class="p-toolbar-group-end">
+      <p-autoComplete [lazy]="true" (onClear)="onProductNameChange($event)" (onSelect)="onProductNameChange($event)"
+        [suggestions]="filteredProductNames" placeholder="جستجو..." (completeMethod)="filterProductName($event)"
+        field="title" class="ml-3">
+      </p-autoComplete>
+      <p-button *ngIf="!currentUser" label="ورود" icon="pi pi-sign-in" [outlined]="true"
+        (click)="showLoginDialog()"></p-button>
+      <p-button *ngIf="currentUser && type=='user'" routerLink="/profile" label="پنل کاربری" [outlined]="true"
+        icon="pi pi-user"></p-button>
+      <i class="pi pi-shopping-bag" pBadge [value]="cartService.getCount().toString()" (click)="showBasket()"></i>
+    </div>
+  </p-toolbar>
+</div>
+
+<div class="header-mobile text-center">
+  <div class="ui-fluid align-items-center justify-content-center mt-2 mb-2">
+    <p-autoComplete [lazy]="true" (onClear)="onProductNameChange($event)" (onSelect)="onProductNameChange($event)"
+      [suggestions]="filteredProductNames" placeholder="جستجو..." (completeMethod)="filterProductName($event)"
+      field="title">
+    </p-autoComplete>
+  </div>
+</div>
+
+<div class="footer-mobile">
+  <div class="flex align-items-center justify-content-center">
+    <p-tabMenu #tab [model]="tabs" [activeItem]="activeItem" (click)="activateMenu(tab)">
+      <ng-template pTemplate="item" let-item>
+        <a class="p-menuitem-link flex align-items-center justify-content-center pb-2">
+          <div class="flex flex-column align-items-center">
+            <i *ngIf="item.badge=='true'" [class]="item.icon" pBadge [value]="cartService.getCount()"></i>
+            <i *ngIf="item.badge=='false'" [class]="item.icon"></i>
+            <span> {{ item.label }}</span>
+          </div>
+        </a>
+      </ng-template>
+    </p-tabMenu>
+  </div>
+</div>
+
+<p-sidebar [(visible)]="display" [style]="{'width':'250px'}" position="right" [showCloseIcon]="true"
+  [baseZIndex]="10000">
+  <div class="d-flex flex-column">
+    <div class="mb-auto">
+      <p-panelMenu [model]="items" [style]="{ width: '100%' }"></p-panelMenu>
+    </div>
+  </div>
+</p-sidebar>
+
+<p-sidebar [(visible)]="displayBasket" [style]="{'width':'320px'}" [showCloseIcon]="true" position="left"
+  [baseZIndex]="10000">
+  <div *ngIf="cartlist.length>0">
+    <div class="mt-2" *ngFor="let item of cartlist; let i=index">
+      <div class="grid nested-grid border-round	border-1 border-200 mb-3 align-items-center">
+        <div class="col-4">
+          <img [src]="item.image" class="img-fluid" alt="" />
+        </div>
+        <div class="col-8">
+          <div class="grid cart">
+            <span class="col-10">{{ item.title }}</span>
+            <i class="pi pi-times col-2" (click)="onDeleteCart(item)"></i>
+            <span class="col-6">{{ item.color }}</span>
+            <span class="col-6">{{ item.number }}</span>
+            <span class="col-12">{{ item.pricefinal/10 | number }} تومان</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <span class="sumprice"> جمع کل: {{sum(cartlist)/10 |number}} تومان</span>
+    </div>
+    <div class="mt-5 text-center">
+      <p-button label="مشاهده سبد و تکمیل خرید" class="basket" (click)="gotoCart()"></p-button>
+    </div>
+  </div>
+  <div class="text-center" *ngIf="cartlist.length === 0">
+    <img width="70px" src="../../../../../assets/images/logo.png" class="img-fluid mb-3" alt="" />
+    <p class="text-center">سبد خرید شما خالی است.</p>
+  </div>
+</p-sidebar>

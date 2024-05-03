@@ -1,0 +1,98 @@
+<p-breadcrumb [model]="[{icon:'pi pi-chevron-left',label: 'داشبرد'}]"
+    [home]="{ icon: 'pi pi-home', routerLink: '/admin' }"></p-breadcrumb>
+
+<div class="px-3 py-4 md:px-6 lg:px-3">
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="surface-card shadow-2 p-3 border-round cursor-pointer" routerLink="/admin/user">
+                <div class="flex justify-content-between mb-3">
+                    <span class="block text-500 mb-3">لیست کاربران</span>
+                    <div class="flex align-items-center justify-content-center bg-blue-100 border-round"
+                        style="width:2.5rem;height:2.5rem">
+                        <i class="pi pi-users text-blue-500 text-xl"></i>
+                    </div>
+                </div>
+                <span class="num text-green-500">14 جدید </span>
+                <span class="text-500">در ماه اخیر</span>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="surface-card shadow-2 p-3 border-round cursor-pointer" routerLink="/admin/faq">
+                <div class="flex justify-content-between mb-3">
+                    <span class="block text-500 mb-3">سوالات متداول</span>
+                    <div class="flex align-items-center justify-content-center bg-orange-100 border-round"
+                        style="width:2.5rem;height:2.5rem">
+                        <i class="pi pi-question-circle text-orange-500 text-xl"></i>
+                    </div>
+                </div>
+                <span class="num text-green-500">5 جدید</span>
+                <span class="text-500">در هفته اخیر</span>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="surface-card shadow-2 p-3 border-round cursor-pointer" routerLink="/admin/contact">
+                <div class="flex justify-content-between mb-3">
+                    <span class="block text-500 mb-3">لیست پیام ها</span>
+                    <div class="flex align-items-center justify-content-center bg-cyan-100 border-round"
+                        style="width:2.5rem;height:2.5rem">
+                        <i class="pi pi-inbox text-cyan-500 text-xl"></i>
+                    </div>
+                </div>
+                <span class="num text-green-500">120 </span>
+                <span class="text-500">پاسخ داده شده</span>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-3">
+            <div class="surface-card shadow-2 p-3 border-round cursor-pointer" routerLink="/admin/config">
+                <div class="flex justify-content-between mb-3">
+                    <span class="block text-500 mb-3">تنظیمات</span>
+                    <div class="flex align-items-center justify-content-center bg-purple-100 border-round"
+                        style="width:2.5rem;height:2.5rem">
+                        <i class="pi pi-cog pi-spin text-purple-500 text-xl"></i>
+                    </div>
+                </div>
+                <span class="num text-green-500 font-medium">2 </span>
+                <span class="text-500">تنظیم شده</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid mt-1">
+        <div class="col-12 md:col-6 lg:col-4 xl:col-4">
+            <div class="card cursor-pointer shadow-1">
+                <h5>تعداد کاربران</h5>
+                <p-chart type="bar" [data]="chartData"></p-chart>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4 xl:col-4">
+            <div class="card cursor-pointer shadow-1">
+                <h5>تعداد پیام ها</h5>
+                <p-chart type="line" [data]="chartData"></p-chart>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4 xl:col-4">
+            <div class="card cursor-pointer shadow-1">
+                <h5>تعداد پیام ها</h5>
+                <p-chart type="bar" [data]="chartData"></p-chart>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4 xl:col-4">
+            <div class="card cursor-pointer shadow-1">
+                <h5>تعداد پیام ها</h5>
+                <p-chart type="pie" [data]="chartData"></p-chart>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4 xl:col-4">
+            <div class="card cursor-pointer shadow-1">
+                <h5>تعداد پیام ها</h5>
+                <p-chart type="doughnut" [data]="chartData"></p-chart>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-4 xl:col-4">
+            <div class="card cursor-pointer shadow-1">
+                <h5>تعداد پیام ها</h5>
+                <p-chart type="polarArea" [data]="chartData"></p-chart>
+            </div>
+        </div>
+    </div>
+</div>

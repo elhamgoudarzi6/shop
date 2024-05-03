@@ -1,0 +1,233 @@
+:host::ng-deep .p-breadcrumb {
+    font-family: myfont !important;
+    font-size: 14px;
+    border: none;
+    background-color: transparent;
+    padding: 15px;
+    margin: 0;
+}
+
+:host::ng-deep .p-breadcrumb .p-icon {
+    display: none;
+}
+
+:host::ng-deep .p-breadcrumb .p-breadcrumb-list li:last-child .p-menuitem-icon {
+    margin-right: -15px;
+}
+.oldprice{
+    color: #777;
+    margin-left: 5px;
+    text-decoration: line-through;
+    font-size: 10px;
+}
+
+.card {
+    background-color: rgb(248, 248, 248);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #ebeaea;
+}
+
+:host ::ng-deep .p-galleria-thumbnail-prev span,
+:host ::ng-deep .p-galleria-thumbnail-next span {
+    border-radius: 50% !important;
+    font-size: 12px;
+    color: #777;
+}
+
+:host ::ng-deep .p-galleria .p-galleria-thumbnail-container {
+    background-color: #fff;
+    padding: 5px 0;
+}
+
+.full-screen {
+    position: absolute;
+    top: -25px;
+    left: 10px;
+    color: #cdc9c9;
+}
+
+.slide-img {
+    border-radius: 10px;
+    max-width: 350px;
+}
+
+:host::ng-deep .p-button.color {
+    width: 40px;
+    height: 40px;
+    border: #ddd 2px solid !important;
+    border-radius: 10px !important;
+    box-shadow: 1px 1px 1px 0px rgba(#ddd, .5);
+    cursor: pointer;
+    margin: 0 3px;
+
+}
+
+:host::ng-deep .p-button.color:focus,
+:host::ng-deep .p-button.color:focus-within {
+    border: var(--color1) 3px solid !important;
+}
+
+p {
+    font-size: 14px;
+    font-family: myfont;
+    line-height: 34px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.card i {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.card h6 {
+    font-size: 14px;
+    font-family: myfont;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 16px;
+    font-family: myfont;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 14px;
+    font-family: myfont;
+    margin-top: 10px;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: myfont-num;
+}
+
+span {
+    font-size: 14px;
+    font-family: myfont-num;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-panels {
+    padding: 0;
+}
+
+:host ::ng-deep .tabview .p-tabview-nav {
+    padding: 0;
+    font-size: 12px;
+    border-color: transparent;
+    font-family: myfont;
+}
+
+/* not selected */
+:host ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    color: #555;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-left-icon {
+    margin-left: 8px;
+}
+
+/* hover */
+:host ::ng-deep .p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+    border-color: var(--color1);
+    border-color: var(--color1);
+    color: var(--color1);
+}
+
+/* selected */
+:host ::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    color: var(--color1);
+    border-color: var(--color1);
+    border-bottom-width: 2px;
+    outline-color: transparent;
+}
+
+:host::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    font-size: 14px;
+    text-align: right;
+    font-family: myfont-bold !important;
+}
+
+:host::ng-deep .p-datatable .p-datatable-thead>tr {
+    border-bottom: .2px solid #f3f3f3;
+}
+
+:host::ng-deep .p-datatable .p-datatable-tbody>tr {
+    border-bottom: .2px solid #f3f3f3;
+
+}
+
+:host::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    font-family: myfont !important;
+    font-size: 14px;
+    text-align: right;
+}
+
+:host::ng-deep .p-datatable .p-datatable-tbody>tr>td.feature {
+    width: 15%;
+    font-family: myfont-bold !important;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        margin: 20px -5px;
+    }
+
+    :host::ng-deep .p-datatable .p-datatable-tbody>tr>td.feature {
+        width: 30%;
+    }
+
+    .card {
+        margin: 20px 10px;
+    }
+}
+
+.thumbnail {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid #f3f3f3;
+    padding: 10px;
+}
+
+:host::ng-deep .p-button {
+    background-color: var(--color1);
+    border-color: var(--color1);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+:host::ng-deep .p-button:hover {
+    background-color: var(--color1);
+    border-color: var(--color1);
+}
+
+:host::ng-deep .p-button .p-button-label {
+    font-family: myfont-bold !important;
+    font-size: 14px;
+}
+
+:host::ng-deep .p-button .p-button-icon-left {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+:host::ng-deep .p-inputtext {
+    font-family: myfont !important;
+    font-size: 14px;
+}
+
+:host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
+    font-size: 16px;
+    font-family: myfont !important;
+}
+
+:host::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-detail {
+    font-size: 16px;
+    font-family: myfont !important;
+    margin-right: 10px;
+}
